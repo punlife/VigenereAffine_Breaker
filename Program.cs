@@ -15,6 +15,7 @@ namespace VigenereAffine_Breaker
         private static string bKey = string.Empty;
         private static string ciphertext = string.Empty;
         private static int KeySize = 6;
+        private static string cipherTextPath = "cipher.txt";
         static void Main(string[] args)
         {
             dict = Affine.populateDictionary();
@@ -32,7 +33,7 @@ namespace VigenereAffine_Breaker
         }
         private static List<List<char>> loadCipherText(int _keySize)
         {
-            ciphertext = File.ReadAllText("cipher.txt").ToUpper();
+            ciphertext = File.ReadAllText(cipherTextPath).ToUpper();
             List<List<char>> columns = new List<List<char>>();
             string text = ciphertext;
             int keySize = _keySize;
